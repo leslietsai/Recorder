@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic 2 Audio Recorder
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h1>
+    <ion-row>
+      <ion-col class="question" text-center>
+        <h2>How is the temperature?</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large outline icon-only round class="recorder" [color]="recording ? 'red' : 'blue'" (click)="toggleRecording()">
+            <ion-icon name="microphone"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+          <button ion-button large outline icon-only round class="player" [color]="playing ? 'red' : 'blue'" (click)="togglePlayback()">
+            <ion-icon name={{playerIcon}}></ion-icon>
+          </button>
+      </ion-col>
+    </ion-row>
+  </h1>
 </ion-content>
